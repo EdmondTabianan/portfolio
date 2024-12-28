@@ -15,3 +15,36 @@
 .footer a:hover {
     color: #f7fff693;
 }
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.footer-content ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 500px;
+}
+.fa {
+    padding: 15px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa {
+    opacity: .7;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-instagram{
+    background: linear-gradient(320deg,  #feda75, #fa7e1e,  #d62976,#962fbf,#4f5bd5 );
+    color: #F7FFF6;
+}
+.fa-github {
+    background: #000;
+    color: #F7FFF6;
+}

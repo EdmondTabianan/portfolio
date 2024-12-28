@@ -7,16 +7,26 @@
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
     <section class="header">
-        <nav>
-            <ul>
-                <li><a href="index.html"></a></li>
-                <li><a href="about.html"></a></li>
-                <li><a href="Project.html"></a></li>
-                <li><a href="#services"></a></li>
-            </ul>
-        </nav>
+        <!-- <div id="active">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="btn active"></a></li>
+                    <li><a href="about.html" class="btn"></a></li>
+                    <li><a href="Project.html" class="btn"></a></li>
+                    <li><a href="#services" class="btns"></a></li>
+                </ul>
+            </nav>
+        </div> -->
+        <div class="myDIV">
+            <button class="btn active"><a href="index.html"></a></button>
+            <button class="btn"><a href="about.html"></a></button>
+            <button class="btn"><a href="Project.html"></a></button>
+            <button class="btn"><a href="#services"></a></button>
+        </div>
     </section>
 <body>
     <section class="body">
@@ -33,20 +43,36 @@
         </div>
     </section>
     <section class="project">
-        <p>project</p>
-        <button type="button" onclick="thiss()">project</button>
+        <h2>project</h2>
+        <button onclick="window.location='Project.html';" value="click here">See More</button>
     </section>
     <section class="about">
-        <p>About</p>
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nam soluta quisquam minima aliquam nesciunt dolorem facere, perferendis nobis, rerum, molestiae voluptates! Sequi delectus, tempore atque eveniet laudantium magni amet!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus soluta, unde cupiditate asperiores aut repellendus tempora! Atque ipsum, accusamus cupiditate placeat, fugit modi assumenda labore voluptas culpa voluptates qui deleniti!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit itaque, aspernatur aut dolor rem pariatur ea! Mollitia beatae tenetur praesentium, quisquam inventore perferendis eum perspiciatis ex, sapiente minus ea provident?</p>
     </section>
     <script src="script/script.js"></script>
 </body>
     <section class="footer">
-        <ul>
-            
-            <li><p>
-                &copy; 2025 All rights reserved by Edmond
-            </p></li>
-        </ul>
+        <div class="footer-content">
+            <h2>Contact</h2>
+            <ul>
+                <li><a href="https://www.facebook.com/edmond.tabianan.22" class="fa fa-facebook"></a></li>
+                <li><a href="https://www.instagram.com/latorre_edmond/" class="fa fa-instagram"></a></li>
+                <li><a href="https://github.com/EdmondTabianan" class="fa fa-github"></a></li>
+            </ul>
+            <ul>
+                <li><h4>facebook</h4></li>
+                <li><h4>instagram</h4></li>
+                <li><h4>Github</h4></li>
+            </ul>
+        
+            <ul>
+                <li><p>
+                    &copy; 2025 All rights reserved by Edmond
+                </p></li>
+            </ul>
+        </div>
     </section>
 </html>

@@ -19,6 +19,7 @@
     justify-content: center;
     overflow: scroll;
     gap: 50px;
+    padding: 20px;
 }
 
 .content {
@@ -34,17 +35,6 @@
 
 .content img {
     width: 250px;
-}
-
-.project {
-    background-color: #87D68D;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.about {
-    background-color: #BCEBCB;
 }
 
 .content-typing {
@@ -122,4 +112,35 @@
         content: "I'm a Web Dev|";
     }
 }
+.project {
+    background-color: #87D68D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100vh;
+}
+.project button {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    border-style: hidden;
+}
 
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background-color: #BCEBCB;
+    height: 65vh;
+    text-align: center;
+}
+
+.about p {
+    text-align: justify;
+    width: 80%;
+    text-indent: 20px;
+}

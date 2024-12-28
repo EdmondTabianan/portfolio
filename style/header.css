@@ -1,0 +1,46 @@
+.header {
+    background-color: #8491A3;
+    height: 10vh;
+}
+
+.header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.header nav ul li:first-child a::before{
+    content: "Home";
+    color: #BCEBCB;
+    font-size: 1rem;
+}
+
+.header nav ul li:nth-child(2) a::before{
+    content: "About Me";
+    color: #BCEBCB;
+    font-size: 1rem;
+}
+.header nav ul li:nth-child(3) a::before{
+    content: "Projects";
+    color: #BCEBCB;
+    font-size: 1rem;
+}
+.header nav ul li:last-child a::before{
+    content: "Service";
+    color: #BCEBCB;
+    font-size: 1rem;
+}
+.header nav ul li {
+    list-style: none;
+}
+
+.header nav ul li a {
+    color: #BCEBCB;
+    text-decoration: none;
+}
+
+.header nav ul li a:hover {
+    color: rgba(240, 248, 255, 0.61);
+    text-decoration: underline;
+}

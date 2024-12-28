@@ -1,0 +1,17 @@
+.footer {
+    background-color: #8491A3;
+    color: #F7FFF6;
+    padding: 20px;
+    text-align: center;
+}
+.footer li {
+    list-style: none;
+}
+
+.footer a {
+    color: #F7FFF6;
+}
+
+.footer a:hover {
+    color: #f7fff693;
+}

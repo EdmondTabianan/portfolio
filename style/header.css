@@ -17,26 +17,21 @@
     justify-content: space-evenly;
     padding: 20px;
 }
+.header .btn a::before {
+    color: #F7FFF6;
+    font-size: 1rem;
+}
 .header .btn:first-child a::before{
     content: "Home";
-    color: #BCEBCB;
-    font-size: 1rem;
-    border-style: none;
 }
 .header .btn:nth-child(2) a::before{
     content: "About Me";
-    color: #BCEBCB;
-    font-size: 1rem;
 }
 .header .btn:nth-child(3) a::before{
     content: "Projects";
-    color: #BCEBCB;
-    font-size: 1rem;
 }
 .header .btn:last-child a::before{
     content: "Service";
-    color: #BCEBCB;
-    font-size: 1rem;
 }
 /* .header nav ul li:first-child a::before{
     content: "Home";

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    border-style: dotted;
 }
 
 :root{
@@ -18,7 +19,6 @@
     align-content: center;
     justify-content: center;
     overflow: scroll;
-    border-style: dotted;
 }
 
 .body h1 {

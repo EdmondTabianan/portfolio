@@ -21,6 +21,10 @@
     border-style: dotted;
 }
 
+.body h1 {
+    font-size: 2rem;
+}
+
 .content {
     display: flex;
     flex-direction: column;

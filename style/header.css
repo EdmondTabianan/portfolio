@@ -3,13 +3,6 @@
     height: 10vh;
 }
 
-/* .header nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 20px;
-} */
 .header .myDIV {
     display: flex;
     flex-direction: row;
@@ -33,42 +26,7 @@
 .header .btn:last-child a::before{
     content: "Service";
 }
-/* .header nav ul li:first-child a::before{
-    content: "Home";
-    color: #BCEBCB;
-    font-size: 1rem;
-}
 
-.header nav ul li:nth-child(2) a::before{
-    content: "About Me";
-    color: #BCEBCB;
-    font-size: 1rem;
-}
-.header nav ul li:nth-child(3) a::before{
-    content: "Projects";
-    color: #BCEBCB;
-    font-size: 1rem;
-}
-.header nav ul li:last-child a::before{
-    content: "Service";
-    color: #BCEBCB;
-    font-size: 1rem;
-} */
-/* .header nav ul li {
-    list-style: none;
-}
-
-.header nav ul li a {
-    color: #BCEBCB;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.header nav ul li a:hover {
-    color:#BCEBCB;
-    text-decoration: underline;
-    font-size: 24px;
-} */
 .header .btn {
     list-style: none;
     border-style: none;

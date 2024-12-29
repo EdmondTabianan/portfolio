@@ -18,8 +18,7 @@
     align-content: center;
     justify-content: center;
     overflow: scroll;
-    gap: 50px;
-    padding: 20px;
+    border-style: dotted;
 }
 
 .content {

@@ -19,7 +19,6 @@
     justify-content: center;
     overflow: scroll;
     gap: 50px;
-    padding: 20px;
 }
 
 .content {
@@ -28,8 +27,7 @@
     align-items: center;
     background-color: #93B48B;
     border-radius: 20px;
-    padding: 50px;
-    margin: 20px;
+    padding: 2rem;
     gap: 20px;
 }
 

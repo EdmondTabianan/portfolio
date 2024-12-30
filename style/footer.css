@@ -24,7 +24,7 @@
 .footer-content ul{
     display: flex;
     justify-content: space-evenly;
-    width: 500px;
+    width: 200px;
 }
 .fa {
     padding: 15px;

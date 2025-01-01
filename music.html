@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="style/header.css">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        #controls {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        #currentSong {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        #playlist {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            height: 200px;
+            overflow: scroll;
+            scrollbar-width: none;
+        }
+        #playlist ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #playlist li {
+            cursor: pointer;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="header">
+        <div class="myDIV">
+            <button class="btn"><a href="index.html"></a></button>
+            <button class="btn"><a href="about.html"></a></button>
+            <button class="btn"><a href="Project.html"></a></button>
+            <button class="btn"><a href="service.html"></a></button>
+        </div>
+    </nav>
+    <audio id="audioPlayer"></audio>
+    <div class="container">
+        <div id="currentSong">Now Playing: OO - Up Dharma Down (Official Lyric Video)</div>
+        <div id="controls">
+            <button id="previousButton">Previous</button>
+            <button id="playPauseButton">Play</button>
+            <button id="nextButton">Next</button>
+        </div>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+        <button id="togglePlaylistButton">Show Playlist</button>
+            <div id="playlist">
+                <ul id="songList"></ul>
+            </div>
+    </div>
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playPauseButton = document.getElementById('playPauseButton');
+        const nextButton = document.getElementById('nextButton');
+        const previousButton = document.getElementById('previousButton');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const currentSongDisplay = document.getElementById('currentSong');
+        const togglePlaylistButton = document.getElementById('togglePlaylistButton');
+        const playlist = document.getElementById('playlist');
+        const songList = document.getElementById('songList');
+
+        const songs = [
+            'sound/Ako Naman Muna - Angela Ken (Lyric Video Visualizer).mp3',
+            'sound/Calein - Umaasa (Official Lyric Video).mp3',
+            'sound/Cup of Joe - Patutunguhan (Lyrics).mp3',
+            'sound/Cup of Joe, Janine Teñoso  - Tingin (Official Lyric Video).mp3',
+            'sound/Eliza Maturan - Museo (Lyrics).mp3',
+            'sound/Estranghero.mp3',
+            'sound/Higa.mp3',
+            'sound/Hulaan by Janine (Lyrics).mp3',
+            'sound/I Belong to the Zoo - Balang Araw (Official Lyric Video).mp3',
+            'sound/Janice - Dilaw (Lyrics).mp3',
+            'sound/Magnus Haven - Imahe (Official Music Video).mp3',
+            'sound/Maki - Bakit_ (Official Lyric Video).mp3',
+            'sound/Maki - Dilaw (Lyrics).mp3',
+            'sound/Misteryoso - Cup of Joe (Official Lyric Video).mp3',
+            'sound/Munimuni - Bawat Piyesa (Official Lyric Video).mp3',
+            'sound/Nag-iisang Muli - Cup of Joe [Official Lyric Video].mp3',
+            'sound/NOBITA - IKAW LANG  Official Lyric Video.mp3',
+            'sound/OO - Up Dharma Down (Official Lyric Video).mp3',
+            'sound/Over October - Ikot (Official Lyric Video).mp3',
+            'sound/Sam Smith - Im Not The Only One (Official Music Video).mp3',
+            'sound/Sam Smith - Lay Me Down (Official Music Video).mp3',
+            'sound/Sam Smith - Stay With Me (Lyrics).mp3',
+            'sound/Sam Smith - Too Good At Goodbyes.mp3',
+            'sound/Sugarfree - Burnout - (Official Lyric Video).mp3',
+            'sound/Tadhana - Up Dharma Down [Lyrics] [1080p].mp3',
+            'sound/TONEEJAY - Aurora (Official Music Video).mp3',
+            'sound/Unti unti - Up Dharma Down (Lyrics).mp3'
+        ];
+
+        const songTitles = [
+            'Ako Naman Muna - Angela Ken (Lyric Video Visualizer)',
+            'Calein - Umaasa (Official Lyric Video)',
+            'Cup of Joe - Patutunguhan (Lyrics)',
+            'Cup of Joe, Janine Teñoso - Tingin (Official Lyric Video)',
+            'Eliza Maturan - Museo (Lyrics)',
+            'Estranghero',
+            'Higa',
+            'Hulaan by Janine (Lyrics)',
+            'I Belong to the Zoo - Balang Araw (Official Lyric Video)',
+            'Janice - Dilaw (Lyrics)',
+            'Magnus Haven - Imahe (Official Music Video)',
+            'Maki - Bakit (Official Lyric Video)',
+            'Maki - Dilaw (Lyrics)',
+            'Misteryoso - Cup of Joe (Official Lyric Video)',
+            'Munimuni - Bawat Piyesa (Official Lyric Video)',
+            'Nag-iisang Muli - Cup of Joe (Official Lyric Video)',
+            'NOBITA - IKAW LANG (Official Lyric Video)',
+            'OO - Up Dharma Down (Official Lyric Video)',
+            'Over October - Ikot (Official Lyric Video)',
+            'Sam Smith - I’m Not The Only One (Official Music Video)',
+            'Sam Smith - Lay Me Down (Official Music Video)',
+            'Sam Smith - Stay With Me (Lyrics)',
+            'Sam Smith - Too Good At Goodbyes',
+            'Sugafree - Burnout (Official Lyric Video)',
+            'Tadhana - Up Dharma Down [Lyrics] (1080p)',
+            'TONEEJAY - Aurora (Official Music Video)',
+            'Unti unti - Up Dharma Down (Lyrics)'
+        ];
+
+        let currentSongIndex = localStorage.getItem('currentSongIndex') ? parseInt(localStorage.getItem('currentSongIndex')) : 0;
+        let currentTime = localStorage.getItem('currentTime') ? parseFloat(localStorage.getItem('currentTime')) : 0;
+
+        audioPlayer.src = songs[currentSongIndex];
+        audioPlayer.currentTime = currentTime;
+        currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+
+        playPauseButton.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseButton.textContent = "Pause";
+            } else {
+                audioPlayer.pause();
+                playPauseButton.textContent = "Play";
+            }
+        });
+
+        volumeSlider.addEventListener('input', () => audioPlayer.volume = volumeSlider.value);
+
+        nextButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            audioPlayer.src = songs[currentSongIndex];
+            audioPlayer.currentTime = 0;
+            currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+            audioPlayer.play();
+            playPauseButton.textContent = "Pause";
+            saveState();
+        });
+
+        previousButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            audioPlayer.src = songs[currentSongIndex];
+            audioPlayer.currentTime = 0;
+            currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+            audioPlayer.play();
+            playPauseButton.textContent = "Pause";
+            saveState();
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            audioPlayer.src = songs[currentSongIndex];
+            audioPlayer.currentTime = 0;
+            currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+            audioPlayer.play();
+            playPauseButton.textContent = "Pause";
+            saveState();
+        });
+
+        audioPlayer.addEventListener('timeupdate', saveState);
+
+        togglePlaylistButton.addEventListener('click', () => {
+            if (playlist.style.display === 'none') {
+                playlist.style.display = 'block';
+                togglePlaylistButton.textContent = 'Hide Playlist';
+            } else {
+                playlist.style.display = 'none';
+                togglePlaylistButton.textContent = 'Show Playlist';
+            }
+        });
+
+        songTitles.forEach((title, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = title;
+            listItem.addEventListener('click', () => {
+                currentSongIndex = index;
+                audioPlayer.src = songs[currentSongIndex];
+                audioPlayer.currentTime = 0;
+                currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+                audioPlayer.play();
+                playPauseButton.textContent = "Pause";
+                saveState();
+            });
+            songList.appendChild(listItem);
+        });
+
+        function saveState() {
+            localStorage.setItem('currentSongIndex', currentSongIndex);
+            localStorage.setItem('currentTime', audioPlayer.currentTime);
+        }
+    </script>
+</body>
+</html>

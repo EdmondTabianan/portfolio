@@ -3,13 +3,6 @@
     padding: 2vh 0;
 }
 
-/* .header nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 20px;
-} */
 .header .myDIV {
     display: flex;
     flex-direction: row;

@@ -43,6 +43,12 @@
             cursor: pointer;
             margin: 5px 0;
         }
+        .active-song {
+        color: white;
+        background-color: #007bff;
+        padding: 5px;
+        border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -229,6 +235,64 @@ audioPlayer.addEventListener('timeupdate', () => {
     const progressBar = document.getElementById('progressBar');
     progressBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
 });
+function highlightCurrentSong() {
+    // Remove highlight from all songs
+    const allSongs = document.querySelectorAll('#songList li');
+    allSongs.forEach(song => song.classList.remove('active-song'));
+
+    // Highlight the current song
+    allSongs[currentSongIndex].classList.add('active-song');
+}
+
+// Update `playPauseButton`, `nextButton`, `previousButton`, and `songList` click handlers
+playPauseButton.addEventListener('click', () => {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseButton.textContent = "Pause";
+    } else {
+        audioPlayer.pause();
+        playPauseButton.textContent = "Play";
+    }
+    highlightCurrentSong(); // Highlight the song when playback is paused or resumed
+});
+
+nextButton.addEventListener('click', () => {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    audioPlayer.src = songs[currentSongIndex];
+    currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+    audioPlayer.play();
+    playPauseButton.textContent = "Pause";
+    highlightCurrentSong(); // Highlight the new song
+});
+
+previousButton.addEventListener('click', () => {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    audioPlayer.src = songs[currentSongIndex];
+    currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+    audioPlayer.play();
+    playPauseButton.textContent = "Pause";
+    highlightCurrentSong(); // Highlight the previous song
+});
+
+songTitles.forEach((title, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = title;
+
+    listItem.addEventListener('click', () => {
+        currentSongIndex = index;
+        audioPlayer.src = songs[currentSongIndex];
+        currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+        audioPlayer.play();
+        playPauseButton.textContent = "Pause";
+        highlightCurrentSong(); // Highlight the clicked song
+    });
+
+    songList.appendChild(listItem);
+});
+
+// Highlight the song on page load
+highlightCurrentSong();
+
 
     </script>
 </body>

@@ -120,6 +120,7 @@ const audioPlayer = document.getElementById('audioPlayer');
                 audioPlayer.play();
                 playPauseButton.textContent = "Pause";
                 saveState();
+                highlightCurrentSong();
             });
             songList.appendChild(listItem);
         });
@@ -162,22 +163,6 @@ previousButton.addEventListener('click', () => {
     audioPlayer.play();
     playPauseButton.textContent = "Pause";
     highlightCurrentSong(); // Highlight the previous song
-});
-
-songTitles.forEach((title, index) => {
-    const listItem = document.createElement('li');
-    listItem.textContent = title;
-
-    listItem.addEventListener('click', () => {
-        currentSongIndex = index;
-        audioPlayer.src = songs[currentSongIndex];
-        currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
-        audioPlayer.play();
-        playPauseButton.textContent = "Pause";
-        highlightCurrentSong(); // Highlight the clicked song
-    });
-
-    // songList.appendChild(listItem); doubling the list of playlist
 });
 
 // Highlight the song on page load

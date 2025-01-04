@@ -12,5 +12,6 @@
 .services{
     width: 500px;
     padding: 20px;
-    margin: 50px 0;
+    margin: 20px 0;
+    border: 1px solid #000;
 }

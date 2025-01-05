@@ -95,6 +95,7 @@ const audioPlayer = document.getElementById('audioPlayer');
             audioPlayer.play();
             playPauseButton.textContent = "Pause";
             saveState();
+            highlightCurrentSong();
         });
 
         audioPlayer.addEventListener('timeupdate', saveState);

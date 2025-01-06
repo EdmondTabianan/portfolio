@@ -2,6 +2,7 @@ const audioPlayer = document.getElementById('audioPlayer');
         const playPauseButton = document.getElementById('playPauseButton');
         const nextButton = document.getElementById('nextButton');
         const previousButton = document.getElementById('previousButton');
+        const randomnext = document.getElementById('randomnext');
         const volumeSlider = document.getElementById('volumeSlider');
         const currentSongDisplay = document.getElementById('currentSong');
         const togglePlaylistButton = document.getElementById('togglePlaylistButton');
@@ -165,6 +166,27 @@ previousButton.addEventListener('click', () => {
     playPauseButton.textContent = "Pause";
     highlightCurrentSong(); // Highlight the previous song
 });
+
+randomnext.addEventListener('click', () => {
+    // Generate a random index to select a song from the playlist
+    currentSongIndex = Math.floor(Math.random() * songs.length);
+    
+    // Set the audio source to the random song
+    audioPlayer.src = songs[currentSongIndex];
+    
+    // Update the display to show the current song title
+    currentSongDisplay.textContent = `Now Playing: ${songTitles[currentSongIndex]}`;
+    
+    // Play the selected song
+    audioPlayer.play();
+    
+    // Change the play/pause button text
+    playPauseButton.textContent = "Pause";
+    
+    // Highlight the newly selected song
+    highlightCurrentSong();
+});
+
 
 // Highlight the song on page load
 highlightCurrentSong();

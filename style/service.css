@@ -13,5 +13,12 @@
     width: 500px;
     padding: 20px;
     margin: 20px 0;
-    border: 1px solid #000;
+    border: 1.5px solid #000;
+    background-color: #c7c7c7;
+}
+
+.services {
+    text-align: justify;
+    text-indent: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }

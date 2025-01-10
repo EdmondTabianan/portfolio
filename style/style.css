@@ -21,6 +21,7 @@
     align-content: center;
     justify-content: center;
     overflow: scroll;
+    height: 100vh;
 }
 
 .content {

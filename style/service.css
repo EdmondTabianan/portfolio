@@ -7,18 +7,24 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;   
+    justify-content: space-evenly;
 }
 .services{
-    width: 500px;
+    width: 90%;
     padding: 20px;
     margin: 20px 0;
     border: 1.5px solid #000;
     background-color: #c7c7c7;
+    border-radius: 20px;
 }
 
 .services {
     text-align: justify;
     text-indent: 20px;
     font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.services h1 {
+    font-size: 1.5rem;
+    text-indent: 0;
 }

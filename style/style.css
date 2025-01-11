@@ -9,6 +9,7 @@
     --primary-color: #f7fff6;     /* Light fresh green */
     --secondary-color: #87D68D;  /* Vibrant medium green */
     --tertiary-color: #BCEBCB;   /* Soft pastel mint green */
+    --text-color: #f7fff6;
 }
 
 .body{

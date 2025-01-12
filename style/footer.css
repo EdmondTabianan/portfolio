@@ -8,6 +8,7 @@
     color: var(--text-color);
     padding: 20px;
     text-align: center;
+    background: #f7fff6;
 }
 .footer li {
     list-style: none;

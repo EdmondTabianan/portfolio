@@ -1,7 +1,17 @@
+:root {
+    --primary-color: #f7fff6;     /* Light fresh green */
+    --secondary-color: #87D68D;  /* Vibrant medium green */
+    --tertiary-color: #BCEBCB;   /* Soft pastel mint green */
+    --text-color: #313131;
+}
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body{
+    background: var(--tertiary-color);
 }
 
 .container {
@@ -9,9 +19,14 @@
     margin: 20px auto;
     background: #fff;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container:nth-child(3) {
+    background: var(--tertiary-color);
 }
 
 .heading {

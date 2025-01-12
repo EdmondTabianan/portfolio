@@ -15,6 +15,7 @@
 
 .footer a {
     color: #1b1b1b;
+    font-size: 24px;
 }
 
 .footer a:hover {
@@ -23,13 +24,11 @@
 .footer-content{
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 25px;
 }
 .footer-content ul{
     display: flex;
     justify-content: space-evenly;
-    width: 200px;
 }
 .fa {
     padding: 15px;

@@ -1,6 +1,11 @@
+:root {
+    --primary-color: #f7fff6;     /* Light fresh green */
+    --secondary-color: #87D68D;  /* Vibrant medium green */
+    --tertiary-color: #BCEBCB;   /* Soft pastel mint green */
+    --text-color: #313131;
+}
 .footer {
-    background-color: #93B48B;
-    color: #f7fff69c;
+    color: var(--text-color);
     padding: 20px;
     text-align: center;
 }
@@ -9,11 +14,11 @@
 }
 
 .footer a {
-    color: #F7FFF6;
+    color: #1b1b1b;
 }
 
 .footer a:hover {
-    color: #f7fff693;
+    color: #858d84;
 }
 .footer-content{
     display: flex;
@@ -28,15 +33,18 @@
 }
 .fa {
     padding: 15px;
-    font-size: 30px;
+    font-size: 1rem;
     width: 50px;
     text-align: center;
     text-decoration: none;
 }
 .fa {
-    opacity: .7;
+    opacity: 1;
 }
-.fa-facebook {
+.fa-facebook, .fa-instagram, .fa-github {
+    color: #000000;
+}
+/* .fa-facebook {
     background: #3B5998;
     color: white;
 }
@@ -47,4 +55,4 @@
 .fa-github {
     background: #000;
     color: #F7FFF6;
-}
+} */

@@ -1,43 +1,44 @@
 const audioPlayer = document.getElementById('audioPlayer');
-        const playPauseButton = document.getElementById('playPauseButton');
-        const nextButton = document.getElementById('nextButton');
-        const previousButton = document.getElementById('previousButton');
-        const randomnext = document.getElementById('randomnext');
-        const volumeSlider = document.getElementById('volumeSlider');
-        const currentSongDisplay = document.getElementById('currentSong');
-        const togglePlaylistButton = document.getElementById('togglePlaylistButton');
-        const playlist = document.getElementById('playlist');
-        const songList = document.getElementById('songList');
+const playPauseButton = document.getElementById('playPauseButton');
+const nextButton = document.getElementById('nextButton');    
+const previousButton = document.getElementById('previousButton');        
+const randomnext = document.getElementById('randomnext');       
+const volumeSlider = document.getElementById('volumeSlider');       
+const currentSongDisplay = document.getElementById('currentSong');        
+const togglePlaylistButton = document.getElementById('togglePlaylistButton');   
+const playlist = document.getElementById('playlist');     
+const songList = document.getElementById('songList');
 
-        const songs = [
-            'sound/Ako Naman Muna - Angela Ken (Lyric Video Visualizer).mp3',
-            'sound/Calein - Umaasa (Official Lyric Video).mp3',
-            'sound/Cup of Joe - Patutunguhan (Lyrics).mp3',
-            'sound/Cup of Joe, Janine Teñoso  - Tingin (Official Lyric Video).mp3',
-            'sound/Eliza Maturan - Museo (Lyrics).mp3',
-            'sound/Estranghero.mp3',
-            'sound/Higa.mp3',
-            'sound/Hulaan by Janine (Lyrics).mp3',
-            'sound/I Belong to the Zoo - Balang Araw (Official Lyric Video).mp3',
-            'sound/Janice - Dilaw (Lyrics).mp3',
-            'sound/Magnus Haven - Imahe (Official Music Video).mp3',
-            'sound/Maki - Bakit_ (Official Lyric Video).mp3',
-            'sound/Maki - Dilaw (Lyrics).mp3',
-            'sound/Misteryoso - Cup of Joe (Official Lyric Video).mp3',
-            'sound/Munimuni - Bawat Piyesa (Official Lyric Video).mp3',
-            'sound/Nag-iisang Muli - Cup of Joe [Official Lyric Video].mp3',
-            'sound/NOBITA - IKAW LANG  Official Lyric Video.mp3',
-            'sound/OO - Up Dharma Down (Official Lyric Video).mp3',
-            'sound/Over October - Ikot (Official Lyric Video).mp3',
-            'sound/Sam Smith - Im Not The Only One (Official Music Video).mp3',
-            'sound/Sam Smith - Lay Me Down (Official Music Video).mp3',
-            'sound/Sam Smith - Stay With Me (Lyrics).mp3',
-            'sound/Sam Smith - Too Good At Goodbyes.mp3',
-            'sound/Sugarfree - Burnout - (Official Lyric Video).mp3',
-            'sound/Tadhana - Up Dharma Down [Lyrics] [1080p].mp3',
-            'sound/TONEEJAY - Aurora (Official Music Video).mp3',
-            'sound/Unti unti - Up Dharma Down (Lyrics).mp3'
-        ];
+const songs = [
+    'sound/Ako Naman Muna - Angela Ken (Lyric Video Visualizer).mp3',
+    'sound/Calein - Umaasa (Official Lyric Video).mp3',
+    'sound/Cup of Joe - Patutunguhan (Lyrics).mp3',
+    'sound/Cup of Joe, Janine Teñoso  - Tingin (Official Lyric Video).mp3',
+    'sound/Eliza Maturan - Museo (Lyrics).mp3',
+    'sound/Estranghero.mp3',
+    'sound/Higa.mp3',
+    'sound/Hulaan by Janine (Lyrics).mp3',
+    'sound/I Belong to the Zoo - Balang Araw (Official Lyric Video).mp3',
+    'sound/Janice - Dilaw (Lyrics).mp3',
+    'sound/Magnus Haven - Imahe (Official Music Video).mp3',
+    'sound/Maki - Bakit_ (Official Lyric Video).mp3',
+    'sound/Maki - Dilaw (Lyrics).mp3',
+    'sound/Misteryoso - Cup of Joe (Official Lyric Video).mp3',
+    'sound/Munimuni - Bawat Piyesa (Official Lyric Video).mp3',
+    'sound/Nag-iisang Muli - Cup of Joe [Official Lyric Video].mp3',
+    'sound/NOBITA - IKAW LANG  Official Lyric Video.mp3',
+    'sound/OO - Up Dharma Down (Official Lyric Video).mp3',
+    'sound/Over October - Ikot (Official Lyric Video).mp3',
+    'sound/Sam Smith - Im Not The Only One (Official Music Video).mp3',
+    'sound/Sam Smith - Lay Me Down (Official Music Video).mp3',
+    'sound/Sam Smith - Stay With Me (Lyrics).mp3',
+    'sound/Sam Smith - Too Good At Goodbyes.mp3',
+    'sound/Sugarfree - Burnout - (Official Lyric Video).mp3',
+    'sound/Tadhana - Up Dharma Down [Lyrics] [1080p].mp3',
+    'sound/TONEEJAY - Aurora (Official Music Video).mp3',
+    'sound/Unti unti - Up Dharma Down (Lyrics).mp3'
+];
+        
 
         const songTitles = [
             'Ako Naman Muna - Angela Ken (Lyric Video Visualizer)',
@@ -186,6 +187,8 @@ randomnext.addEventListener('click', () => {
     // Highlight the newly selected song
     highlightCurrentSong();
 });
+
+// =
 
 
 // Highlight the song on page load
